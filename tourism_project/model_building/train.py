@@ -45,7 +45,6 @@ categorical_features = ['TypeofContact',
  'MaritalStatus',
  'Designation']
 
-
 # Set the class weight to handle class imbalance
 class_weight = ytrain.value_counts()[0] / ytrain.value_counts()[1]
 class_weight
@@ -122,7 +121,7 @@ with mlflow.start_run():
 
     # Save next to app.py so the Streamlit app can load it directly, and log
     # it as an MLflow artifact for traceability
-    model_path = "tourism_project/deployment/best_machine_failure_model_v1.joblib"
+    model_path = "tourism_project/deployment/best_tourism_prediction_model_v1.joblib"
     joblib.dump(best_model, model_path)
     mlflow.log_artifact(model_path, artifact_path="model")
     print(f"Model saved to {model_path}")

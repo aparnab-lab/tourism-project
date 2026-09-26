@@ -38,7 +38,12 @@ numeric_features = [
  'MonthlyIncome']
 
 # defining the list of categorical features
-categorical_features = data.select_dtypes(include=["object", "category"]).columns.tolist()
+categorical_features = ['TypeofContact',
+ 'Occupation',
+ 'Gender',
+ 'ProductPitched',
+ 'MaritalStatus',
+ 'Designation']
 
 
 # Set the class weight to handle class imbalance

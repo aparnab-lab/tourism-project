@@ -2,10 +2,20 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 
 df = pd.read_csv("tourism_project/data/tourism.csv")
+
+# Performing all the data manipulation inside the script
 df.drop(columns=['Unnamed: 0', 'CustomerID'], inplace=True)
 
+# Changing  'Fe Male' into 'Female' in Gender Column
 df["Gender"] = df["Gender"].replace("Fe Male", "Female")
+
+# Changing  Unmarried to Single in Marital Status
 df["MaritalStatus"] = df["MaritalStatus"].replace("Unmarried", "Single")
+
+# Convert 'NumberOfChildrenVisiting', 'NumberOfTrips', and 'NumberOfFollowups' to integer types
+df['NumberOfChildrenVisiting'] = df['NumberOfChildrenVisiting'].astype(int)
+df['NumberOfTrips'] = df['NumberOfTrips'].astype(int)
+df['NumberOfFollowups'] = df['NumberOfFollowups'].astype(int)
 
 X = df.drop(columns=["ProdTaken"])
 y = df["ProdTaken"]

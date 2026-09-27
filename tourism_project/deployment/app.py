@@ -18,12 +18,12 @@ Enter the customer details below to get a prediction.
 age = st.number_input("Age", min_value=18, max_value=100, value=30)
 duration_of_pitch = st.number_input("Duration of Pitch (minutes)", min_value=0.0, max_value=200.0, value=15.0)
 number_of_person_visiting = st.number_input("Number of Persons Visiting", min_value=1, max_value=10, value=2)
-number_of_followups = st.number_input("Number of Follow-ups", min_value=0.0, max_value=10.0, value=3.0)
+number_of_followups = st.number_input("Number of Follow-ups", min_value=0, max_value=10, value=3) # Changed to integer input
 preferred_property_star = st.number_input("Preferred Property Star (1-5)", min_value=1.0, max_value=5.0, value=3.0)
-number_of_trips = st.number_input("Number of Trips per year", min_value=0.0, max_value=50.0, value=3.0)
+number_of_trips = st.number_input("NumberOfTrips per year", min_value=0, max_value=50, value=3) # Changed to integer input
 pitch_satisfaction_score = st.number_input("Pitch Satisfaction Score (1-5)", min_value=1, max_value=5, value=3)
 own_car = st.selectbox("Owns a Car", [0, 1], format_func=lambda x: "Yes" if x == 1 else "No")
-number_of_children_visiting = st.number_input("Number of Children Visiting", min_value=0.0, max_value=5.0, value=0.0)
+number_of_children_visiting = st.number_input("Number of Children Visiting", min_value=0, max_value=5, value=0) # Changed to integer input
 monthly_income = st.number_input("Monthly Income", min_value=1000.0, max_value=100000.0, value=25000.0)
 passport = st.selectbox("Has Passport", [0, 1], format_func=lambda x: "Yes" if x == 1 else "No")
 
